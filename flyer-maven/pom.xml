@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.sunteya</groupId>
+		<artifactId>maven-parent</artifactId>
+		<version>1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sunteya.flyer</groupId>
+	<artifactId>flyer-maven</artifactId>
+	<name>flyer's maven</name>
+	<packaging>pom</packaging>
+	<version>1</version>
+
+	<scm>
+		<connection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-1</connection>
+		<developerConnection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-1</developerConnection>
+	</scm>
+
+	<profiles>
+		<profile>
+			<id>environment</id>
+			<activation>
+				<property>
+					<name>env</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<webResources>
+								<resource>
+									<directory>${basedir}/src/main/webResource-${env}</directory>
+									<filtering>true</filtering>
+								</resource>
+							</webResources>
+							<warName>${artifactId}-${version}-${env}</warName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
