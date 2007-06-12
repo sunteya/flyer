@@ -121,7 +121,7 @@ public abstract class UrlUtils {
 		return buildUrl(baseUrl, params, anchor, encoding);
 	}
 
-	private static String buildUrl(String baseUrl, Map<String, String[]> params, String anchor, String encoding) {
+	public static String buildUrl(String baseUrl, Map<String, String[]> params, String anchor, String encoding) {
 		String queryString = buildQueryString(params, encoding);
 
 		StringBuilder targetUrl = new StringBuilder();
@@ -139,7 +139,7 @@ public abstract class UrlUtils {
 		return targetUrl.toString();
 	}
 
-	private static String buildQueryString(Map<String, String[]> params, String encoding) {
+	public static String buildQueryString(Map<String, String[]> params, String encoding) {
 		List<String> answer = new ArrayList<String>();
 		for (String key : (Set<String>) params.keySet()) {
 			String[] values = params.get(key);
@@ -154,7 +154,7 @@ public abstract class UrlUtils {
 	}
 
 	@SuppressWarnings("deprecation")
-	private static String encodeUrl(String key, String encoding) {
+	public static String encodeUrl(String key, String encoding) {
 		try {
 			return URLEncoder.encode(key, encoding);
 		} catch (UnsupportedEncodingException e) {

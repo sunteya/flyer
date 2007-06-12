@@ -11,13 +11,13 @@
 	<artifactId>flyer-project</artifactId>
 	<packaging>pom</packaging>
 	<name>flyer's project</name>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 
 	<inceptionYear>2007</inceptionYear>
 
 	<scm>
-		<connection>scm:svn:http://dev.sunteya.com/svn/flyer/tags/flyer-project-1.0</connection>
-		<developerConnection>scm:svn:http://dev.sunteya.com/svn/flyer/tags/flyer-project-1.0</developerConnection>
+		<connection>scm:svn:http://dev.sunteya.com/svn/flyer/trunk</connection>
+		<developerConnection>scm:svn:http://dev.sunteya.com/svn/flyer/trunk</developerConnection>
 	</scm>
 
 	<modules>
@@ -74,7 +74,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate</artifactId>
-				<version>3.2.4.ga</version>
+				<version>3.2.4.sp1</version>
 				<exclusions>
 					<exclusion>
 						<groupId>cglib</groupId>
