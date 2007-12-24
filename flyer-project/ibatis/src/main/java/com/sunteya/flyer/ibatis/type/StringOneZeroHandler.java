@@ -25,8 +25,7 @@ public class StringOneZeroHandler implements TypeHandlerCallback {
 		}
 	}
 
-	public void setParameter(ParameterSetter setter, Object parameter)
-			throws SQLException {
+	public void setParameter(ParameterSetter setter, Object parameter) throws SQLException {
 		Boolean val = (Boolean) parameter;
 		if(val.booleanValue()) {
 			setter.setString("1");

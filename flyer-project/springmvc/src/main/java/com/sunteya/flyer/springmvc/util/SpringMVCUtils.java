@@ -20,7 +20,7 @@ public abstract class SpringMVCUtils {
 	@SuppressWarnings("unchecked")
 	public static ModelMap newModelMap(Map objects) {
 		ModelMap model = new ModelMap();
-		model.addAllObjects(objects);
+		model.addAllAttributes(objects);
 		return model;
 	}
 

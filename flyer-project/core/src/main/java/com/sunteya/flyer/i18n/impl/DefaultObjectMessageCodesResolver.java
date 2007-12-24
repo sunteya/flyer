@@ -7,21 +7,19 @@ package com.sunteya.flyer.i18n.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sunteya.flyer.i18n.MessageCode;
+
 /**
  * @author Sunteya
  *
  */
-public class DefaultObjectMessageCodesResolver extends GenericMessageCodesResolver<Object> {
+public class DefaultObjectMessageCodesResolver extends GenericMessageCodeResolver<Object> {
 
 	@Override
-	protected String[] resolveObject(Object obj) {
-		if(obj instanceof String) {
-			return new String[] { obj.toString() };
-		}
-
-		List<String> answer = new ArrayList<String>();
-		answer.add(obj.getClass().getName());
-		answer.add(obj.getClass().getSimpleName());
-		return answer.toArray(new String[0]);
+	protected MessageCode resolveObject(Object obj) {
+		List<String> codes = new ArrayList<String>();
+		codes.add(obj.getClass().getName());
+		codes.add(obj.getClass().getSimpleName());
+		return new MessageCode(codes);
 	}
 }

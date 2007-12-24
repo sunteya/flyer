@@ -42,7 +42,8 @@ public class BeanDefinitionPostConfigurer implements BeanFactoryPostProcessor,
 
 	private BeanDefinition getMergedBeanDefinition(ConfigurableListableBeanFactory beanFactory, String beanName) {
 		if(beanFactory instanceof AbstractBeanFactory) {
-			return ((AbstractBeanFactory) beanFactory).getMergedBeanDefinition(beanName);
+			AbstractBeanFactory abstractBeanFactory = (AbstractBeanFactory) beanFactory;
+			return abstractBeanFactory.getMergedBeanDefinition(beanName);
 		}
 
 		return beanFactory.getBeanDefinition(beanName);

@@ -12,7 +12,7 @@ import java.util.Set;
  * @author Sunteya
  *
  */
-public class StringSetUserType extends StringCollectionUserType {
+public class StringSetUserType extends CsvCollectionUserType {
 
 	public Class<?> returnedClass() {
 		return Set.class;

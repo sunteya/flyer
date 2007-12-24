@@ -11,7 +11,7 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractCommandController;
 
-import com.sunteya.flyer.util.GenericUtils;
+import com.sunteya.commons.util.GenericUtils;
 
 /**
  *

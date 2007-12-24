@@ -12,7 +12,7 @@ import java.util.List;
  * @author Sunteya
  *
  */
-public class StringListUserType extends StringCollectionUserType {
+public class StringListUserType extends CsvCollectionUserType {
 
 	public Class<?> returnedClass() {
 		return List.class;

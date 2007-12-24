@@ -6,7 +6,7 @@ package com.sunteya.flyer.springmvc.validator;
 
 import org.springframework.validation.Errors;
 
-import com.sunteya.flyer.util.GenericUtils;
+import com.sunteya.commons.util.GenericUtils;
 
 /**
  * @author Sunteya

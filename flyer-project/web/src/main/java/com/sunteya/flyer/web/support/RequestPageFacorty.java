@@ -4,21 +4,31 @@
  */
 package com.sunteya.flyer.web.support;
 
-import javax.servlet.http.HttpServletRequest;
+import com.sunteya.flyer.web.route.ActionRouting;
 
 /**
- * @author Lewisou
+ * @author Sunteya
  *
  */
 public abstract class RequestPageFacorty {
 
-	public static RequestPage createRequestPage(HttpServletRequest request,
-			boolean allowCustomPageSize, int defaultPageSize) {
-		RequestPage requestPage = new RequestPage();
-		requestPage.setRequest(request);
-		requestPage.setAllowCustomPageSize(allowCustomPageSize);
+	public static GetMethodRequestPage createGetMethodRequestPage(ActionRouting routing, int defaultPageSize)  {
+		return createGetMethodRequestPage(routing, defaultPageSize, false);
+	}
+
+	public static GetMethodRequestPage createGetMethodRequestPage(ActionRouting routing,
+			int defaultPageSize, boolean customSize) {
+		GetMethodRequestPage requestPage = createGetMethodRequestPage();
+		requestPage.setActionRouting(routing);
+		requestPage.setAllowCustomPageSize(customSize);
 		requestPage.setDefaultPageSize(defaultPageSize);
 		return requestPage;
 	}
 
+	private static GetMethodRequestPage createGetMethodRequestPage() {
+		GetMethodRequestPage requestPage = new GetMethodRequestPage();
+		requestPage.setPageIndexKey("page");
+		requestPage.setPageSizeKey("size");
+		return requestPage;
+	}
 }

@@ -19,7 +19,6 @@ public class Pagination<T> implements Serializable {
 	private List<T> elements;
 
 	public Pagination() {
-		super();
 	}
 
 	public Pagination(PaginationStrategy strategy, List<T> elements) {
@@ -105,7 +104,7 @@ public class Pagination<T> implements Serializable {
 		this.elements = elements;
 	}
 
-	public PaginationStrategy getStrategy() {
+	public PaginationSupport getStrategy() {
 		return strategy;
 	}
 

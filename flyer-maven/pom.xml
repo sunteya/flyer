@@ -2,7 +2,7 @@
 	<parent>
 		<groupId>com.sunteya</groupId>
 		<artifactId>maven-parent</artifactId>
-		<version>1</version>
+		<version>2</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -10,11 +10,11 @@
 	<artifactId>flyer-maven</artifactId>
 	<name>flyer's maven</name>
 	<packaging>pom</packaging>
-	<version>1</version>
+	<version>2</version>
 
 	<scm>
-		<connection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-1</connection>
-		<developerConnection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-1</developerConnection>
+		<connection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-2</connection>
+		<developerConnection>scm:svn:http://dev.sunteya.com/svn/flyer-maven/tags/flyer-maven-2</developerConnection>
 	</scm>
 
 	<profiles>

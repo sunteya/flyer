@@ -15,8 +15,7 @@ import org.hibernate.usertype.ParameterizedType;
  * @author Sunteya
  *
  */
-public abstract class AbstractEnumUserType implements EnhancedUserType,
-		ParameterizedType {
+public abstract class AbstractEnumUserType implements EnhancedUserType, ParameterizedType {
 
 	@SuppressWarnings("unchecked")
 	private Class<? extends Enum> enumClass;

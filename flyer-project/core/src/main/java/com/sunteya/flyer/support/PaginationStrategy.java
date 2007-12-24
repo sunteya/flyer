@@ -4,7 +4,6 @@
  */
 package com.sunteya.flyer.support;
 
-import java.io.Serializable;
 
 
 /**
@@ -12,22 +11,17 @@ import java.io.Serializable;
  * @author 诸南敏
  * @email Sunteya@gmail.com
  */
-public class PaginationStrategy implements Serializable {
+public class PaginationStrategy extends PaginationSupport {
 
 	private static final long serialVersionUID = -5403761531524968051L;
-	private int itemAmount;
 	private int currentPageIndex;
-	private int pageSize;
-
 
 	public PaginationStrategy() {
 	}
 
 	public PaginationStrategy(int currentPageIndex, int pageSize, int itemAmount) {
-		super();
-		this.itemAmount = itemAmount;
+		super(pageSize, itemAmount);
 		this.currentPageIndex = currentPageIndex;
-		this.pageSize = pageSize;
 	}
 
 	public boolean isLastPage() {
@@ -76,21 +70,6 @@ public class PaginationStrategy implements Serializable {
 		return previousPageItemCount;
 	}
 
-	public int getPageCount() {
-		if (isEmptyItemAmount()) {
-			return 1;
-		}
-
-		if (getItemAmount() % getPageSize() == 0) {
-			return getItemAmount() / getPageSize();
-		}
-		return getItemAmount() / getPageSize() + 1;
-	}
-
-	public boolean isEmptyItemAmount() {
-		return getItemAmount() == 0;
-	}
-
 	public int getFirstPageIndex() {
 		return 1;
 	}
@@ -111,25 +90,5 @@ public class PaginationStrategy implements Serializable {
 
 	public void setCurrentPageIndex(int currentPageIndex) {
 		this.currentPageIndex = currentPageIndex;
-	}
-
-	public int getItemAmount() {
-		return itemAmount > 0 ? itemAmount : 0;
-	}
-
-	public void setItemAmount(int itemAmount) {
-		this.itemAmount = itemAmount;
-	}
-
-	public int getPageSize() {
-		return pageSize > 0 ? pageSize : 1;
-	}
-
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public boolean isNotEmptyItemAmount() {
-		return !isEmptyItemAmount();
 	}
 }

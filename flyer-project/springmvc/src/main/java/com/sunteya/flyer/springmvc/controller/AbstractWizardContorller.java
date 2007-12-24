@@ -12,7 +12,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractFormController;
 
-import com.sunteya.flyer.util.GenericUtils;
+import com.sunteya.commons.util.GenericUtils;
 
 /**
  * @author Sunteya

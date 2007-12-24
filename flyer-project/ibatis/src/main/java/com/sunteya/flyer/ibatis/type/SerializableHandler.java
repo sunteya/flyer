@@ -24,8 +24,7 @@ public class SerializableHandler implements TypeHandlerCallback {
 		return SerializationUtils.deserialize(getter.getBytes());
 	}
 
-	public void setParameter(ParameterSetter setter, Object parameter)
-			throws SQLException {
+	public void setParameter(ParameterSetter setter, Object parameter) throws SQLException {
 		Serializable data = (Serializable) parameter;
 		setter.setBytes(SerializationUtils.serialize(data));
 	}

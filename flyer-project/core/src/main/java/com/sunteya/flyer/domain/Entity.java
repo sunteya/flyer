@@ -12,7 +12,15 @@ import java.io.Serializable;
  */
 public interface Entity extends Serializable {
 
+	final String ID_PROPERTY_NAME = "id"; 
+	
 	Serializable getIdentityCode();
+
+	Integer getLockVersion();
+
+	boolean isTransient();
+
+	boolean isPersistent();
 
 	int hashCode();
 

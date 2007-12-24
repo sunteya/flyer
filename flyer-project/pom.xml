@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>com.sunteya</groupId>
 		<artifactId>maven-parent</artifactId>
-		<version>1</version>
+		<version>2</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
 	<artifactId>flyer-project</artifactId>
 	<packaging>pom</packaging>
 	<name>flyer's project</name>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.3-SNAPSHOT</version>
 
 	<inceptionYear>2007</inceptionYear>
 
@@ -21,15 +21,16 @@
 	</scm>
 
 	<modules>
+		<module>commons</module>
 		<module>core</module>
-		<module>freemarker</module>
 		<module>hibernate</module>
 		<module>ibatis</module>
-		<module>mail</module>
 		<module>sitemesh</module>
 		<module>spring</module>
 		<module>springmvc</module>
 		<module>web</module>
+		<module>acegi</module>
+		<module>struts2</module>
 		<module>test</module>
 	</modules>
 
@@ -40,7 +41,13 @@
 				<artifactId>commons-lang</artifactId>
 				<version>2.2</version>
 			</dependency>
-
+			
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>1.2</version>
+			</dependency>
+		
 			<dependency>
 				<groupId>commons-collections</groupId>
 				<artifactId>commons-collections</artifactId>
@@ -58,13 +65,24 @@
 				<artifactId>dom4j</artifactId>
 				<version>1.6.1</version>
 			</dependency>
+
+			<dependency>
+				<groupId>net.sf.opencsv</groupId>
+				<artifactId>opencsv</artifactId>
+				<optional>true</optional>
+				<version>1.8</version>
+			</dependency>
 			
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>${slf4j-version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl104-over-slf4j</artifactId>
+				<version>${slf4j-version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-jdk14</artifactId>
@@ -72,23 +90,50 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate</artifactId>
 				<version>3.2.4.sp1</version>
-				<exclusions>
-					<exclusion>
-						<groupId>cglib</groupId>
-						<artifactId>cglib</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>asm</groupId>
-						<artifactId>asm</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>asm</groupId>
-						<artifactId>asm-attrs</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 
 			<dependency>
@@ -98,17 +143,44 @@
 			</dependency>
 
 			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm</artifactId>
+				<version>${asm-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm-commons</artifactId>
+				<version>${asm-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm-util</artifactId>
+				<version>${asm-version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>3.0-FINAL</version>
+			</dependency>
+			
+			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
 				<version>2.4</version>
 			</dependency>
 
 			<dependency>
-				<groupId>freemarker</groupId>
+				<groupId>org.freemarker</groupId>
 				<artifactId>freemarker</artifactId>
-				<version>2.3.8</version>
+				<version>2.3.10</version>
 			</dependency>
 
+			<dependency>
+				<groupId>ognl</groupId>
+				<artifactId>ognl</artifactId>
+				<version>2.7.1</version>
+			</dependency>
 
 			<dependency>
 				<groupId>junit</groupId>
@@ -119,7 +191,7 @@
 			<dependency>
 				<groupId>org.unitils</groupId>
 				<artifactId>unitils</artifactId>
-				<version>1.0-rc-2</version>
+				<version>1.0</version>
 			</dependency>
 			
 			<dependency>
@@ -133,6 +205,13 @@
 				<artifactId>easymockclassextension</artifactId>
 				<version>2.2</version>
 			</dependency>
+			
+	        <dependency>
+	            <groupId>jboss</groupId>
+	            <artifactId>javassist</artifactId>
+	            <version>3.4.ga</version>
+	        </dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
@@ -148,8 +227,8 @@
 	</dependencies>
 
 	<properties>
-		<slf4j-version>1.4.0</slf4j-version>
-		<spring-version>2.0.4</spring-version>
+		<slf4j-version>1.4.3</slf4j-version>
+		<spring-version>2.5</spring-version>
 		<asm-version>2.2.3</asm-version>
 	</properties>
 </project>
